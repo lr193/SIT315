@@ -1,0 +1,24 @@
+  const int SensorPin = 2;
+  const int LedPin = 13;
+  
+void setup()  {
+  Serial.begin(9600);
+  pinMode(LedPin,OUTPUT);
+  pinMode(SensorPin,INPUT);
+  digitalWrite(LedPin,LOW);
+
+  attachInterrupt(digitalPinToInterrupt(SensorPin) , trigger , CHANGE);
+}
+
+void loop()  {
+    
+    delay(1000);
+}
+
+void trigger(){
+
+  Serial.println("Interrupt Triggered");
+
+//  digitalWrite(SensorPin , !SensorPin);
+
+}
