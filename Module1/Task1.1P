@@ -1,0 +1,21 @@
+  const int SensorPin = 2;
+  const int LedPin = 13;
+  
+void setup()  {
+  Serial.begin(9600);
+  pinMode(LedPin,OUTPUT);
+  pinMode(SensorPin,INPUT);
+  digitalWrite(LedPin,LOW);
+}
+void loop()  {
+    if(digitalRead(SensorPin)==HIGH)  {
+      Serial.println("True");
+      digitalWrite(LedPin, HIGH);
+    }
+    else  {
+      Serial.println("False");
+      digitalWrite(LedPin, LOW);
+    }
+    delay(1000);
+}
+
